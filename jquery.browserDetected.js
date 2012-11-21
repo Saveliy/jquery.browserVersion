@@ -22,9 +22,13 @@
 		else if ($.browser.safari)
 			name = 'sf';
 
-		// Переопределение версии браузера для Chrome.
+		// Переопределение версии браузера для Chrome и Safari.
+
 		if (name == 'ch') {
 			var regexp=/Chrome\/([0-9]+)/;
+			browserVersion = regexp.exec(window.navigator.userAgent)[1];
+		} else if (name == 'sf') {
+			var regexp=/AppleWebKit.+Version\/([0-9])+/;
 			browserVersion = regexp.exec(window.navigator.userAgent)[1];
 		}
 
