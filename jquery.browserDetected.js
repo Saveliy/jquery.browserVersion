@@ -31,9 +31,7 @@
 			var regexp=/AppleWebKit.+Version\/([0-9])+/;
 			browserVersion = regexp.exec(window.navigator.userAgent)[1];
 		}
-
 		$(item).addClass(name + ' ' + name + parseInt(browserVersion));
-
 		return item;
 	};
 })(jQuery);
