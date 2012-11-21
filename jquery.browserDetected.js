@@ -22,14 +22,17 @@
 		else if ($.browser.safari)
 			name = 'sf';
 
-		// Переопределение версии браузера для Chrome.
+		// Переопределение версии браузера для Chrome safari.
 		if (name == 'ch') {
 			var regexp=/Chrome\/([0-9]+)/;
 			browserVersion = regexp.exec(window.navigator.userAgent)[1];
+		} else if (name == 'sf') {
+			var regexp=/AppleWebKit.+Version\/([0-9])+/;
+			browserVersion = regexp.exec(window.navigator.userAgent)[1];
 		}
-
+//		Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2
 		$(item).addClass(name + ' ' + name + parseInt(browserVersion));
-
+//console.log(window.navigator.userAgent);
 		return item;
 	};
 })(jQuery);
